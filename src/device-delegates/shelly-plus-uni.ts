@@ -1,16 +1,16 @@
 import {
-  ShellyPlusUNI,
+  ShellyPlusUni,
 } from 'shellies-ng';
 
 
 import { DeviceDelegate } from './base';
 
 /**
- * Handles Shelly Plus UNI devices.
+ * Handles Shelly Plus Uni devices.
  */
-export class ShellyPlusUNIDelegate extends DeviceDelegate {
+export class ShellyPlusUniDelegate extends DeviceDelegate {
   protected setup() {
-    const d = this.device as ShellyPlusUNI;
+    const d = this.device as ShellyPlusUni;
 
     this.addSwitch(d.switch0, { single: true });
     // this.addSwitch(d.switch1, { single: true });
@@ -18,6 +18,6 @@ export class ShellyPlusUNIDelegate extends DeviceDelegate {
 }
 
 DeviceDelegate.registerDelegate(
-  ShellyPlusUNIDelegate,
-  ShellyPlusUNI,
+  ShellyPlusUniDelegate,
+  ShellyPlusUni,
 );
