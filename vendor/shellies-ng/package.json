@@ -1,60 +1,52 @@
 {
-  "name": "homebridge-shelly-ng",
-  "version": "1.6.0",
-  "description": "Homebridge plugin for the next generation of Shelly devices",
+  "name": "shellies-ng",
+  "version": "1.5.1-fluxgrid.0",
+  "description": "Fluxgrid fork of shellies-ng that includes Shelly Plus Uni support",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "lint": "eslint ./src --ext .ts,.js --max-warnings=0",
     "test": "jest",
-    "prepare": "npm run build",
-    "preversion": "npm run build && npm run lint",
+    "preversion": "npm run build && npm run lint && npm test",
     "postversion": "git push && git push --tags"
-  },
-  "engines": {
-    "node": ">=14.18.3",
-    "homebridge": ">=1.3.5"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexryd/homebridge-shelly-ng.git"
+    "url": "git+https://github.com/fluxgrid/node-shellies-ng.git"
   },
   "keywords": [
-    "homebridge",
-    "homebridge-plugin",
     "shelly"
-  ],
-  "files": [
-    "dist/**/*",
-    "config.schema.json",
-    "README.md",
-    "LICENSE",
-    "vendor/shellies-ng/**/*"
   ],
   "author": "Alexander Rydén",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/alexryd/homebridge-shelly-ng/issues"
+    "url": "https://github.com/fluxgrid/node-shellies-ng/issues"
   },
-  "homepage": "https://github.com/alexryd/homebridge-shelly-ng#readme",
+  "homepage": "https://github.com/fluxgrid/node-shellies-ng#readme",
   "funding": {
     "type": "kofi",
     "url": "https://ko-fi.com/alexryd"
   },
   "devDependencies": {
     "@types/jest": "^28.1.2",
-    "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "eslint": "^8.18.0",
-    "homebridge": "^1.5.0",
     "jest": "^28.1.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^28.0.5",
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "shellies-ng": "file:vendor/shellies-ng"
+    "@types/multicast-dns": "^7.2.1",
+    "eventemitter3": "^4.0.7",
+    "fast-deep-equal": "^3.1.3",
+    "json-rpc-2.0": "^1.3.0",
+    "multicast-dns": "^7.2.5",
+    "ws": "^8.8.0"
   }
 }
