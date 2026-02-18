@@ -3,10 +3,12 @@
   "version": "1.6.0",
   "description": "Homebridge plugin for the next generation of Shelly devices",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "lint": "eslint ./src --ext .ts,.js --max-warnings=0",
     "test": "jest",
+    "prepare": "npm run build",
     "preversion": "npm run build && npm run lint",
     "postversion": "git push && git push --tags"
   },
@@ -22,6 +24,12 @@
     "homebridge",
     "homebridge-plugin",
     "shelly"
+  ],
+  "files": [
+    "dist/**/*",
+    "config.schema.json",
+    "README.md",
+    "LICENSE"
   ],
   "author": "Alexander Rydén",
   "license": "GPL-3.0",
