@@ -90,7 +90,7 @@ export class ConfigDeviceDiscoverer extends BaseDeviceDiscoverer {
         await this.emitDevice({
           deviceId: id,
           hostname: opts.hostname,
-          protocol: 'http',
+          protocol: 'websocket',
         } as DeviceIdentifiers);
       }
     }
@@ -118,7 +118,7 @@ export class CacheDeviceDiscoverer extends BaseDeviceDiscoverer {
       await this.emitDevice({
         deviceId: d.id,
         hostname: d.hostname,
-        protocol: 'http',
+        protocol: 'websocket',
       } as DeviceIdentifiers);
     }
   }
